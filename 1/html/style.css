@@ -86,8 +86,10 @@ footer{
 }
 
 .topnav {
-    background-color: #333;
+    background-color: #000000;
     overflow: hidden;
+    display: flex;
+    align-items: center;
   }
   
   /* Style the links inside the navigation bar */
@@ -110,4 +112,15 @@ footer{
   .topnav a.active {
     background-color: #04AA6D;
     color: white;
+  }
+
+  .icon {
+    width: 64px; /* Desired width */
+    height: 64px; /* Desired height */
+    display: block;
+    margin: 0px auto; /* Centering the image */
+  } 
+
+  .title{
+    color: rgb(243, 243, 243);
   }
