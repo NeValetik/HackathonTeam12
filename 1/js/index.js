@@ -1,8 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    const response = await fetch('D:/chrome_extension/1/js/data.json');
+    const data = await response.json();
+
     const text_body = document.querySelector(".text-body");
-    text_body.textContent = `
-                This is an H3 Heading
-                This is a paragraph within the text body. The styles for this paragraph are defined in the text-body class.
-                Another paragraph to demonstrate multiple paragraphs within the text body.
-            `;
+
+    text_body.innerHTML = `
+        <h3>${data.Telefon.name}</h3>
+    `;
 });

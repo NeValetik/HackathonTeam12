@@ -8,4 +8,4 @@ document.addEventListener('DOMContentLoaded', () => {
       chrome.runtime.sendMessage({request:"OpenPopup",message:search});
     });
   }
-});
+})
