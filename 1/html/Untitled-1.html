@@ -3,235 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Web cu Formular Extins și Căutare</title>
+    <title>TermView</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-            overflow: hidden;
-        }
-        header {
-            background-color: #2c3e50;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            animation: fadeInDown 1s ease-out;
-        }
-        nav {
-            background-color: #3498db;
-            text-align: center;
-            padding: 10px;
-            animation: fadeInUp 1s ease-out;
+        /* CSS adăugat pentru fixarea footer-ului */
+        html {
             position: relative;
+            min-height: 100%;
         }
-        .logo {
-            vertical-align: middle;
-            width: 40px;
-            height: auto;
-            animation: rollIn 2s ease-out;
-            animation-delay: 0.5s;
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
         }
-        nav a {
-            text-decoration: none;
+        .map-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            background-color: #000;
             color: #fff;
-            padding: 0 10px;
-            display: inline-flex;
-            align-items: center;
-            font-size: 1.2rem;
-        }
-        section {
-            padding: 20px;
-            animation: fadeIn 1s ease-out;
-            background-color: #ecf0f1;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px auto;
-            max-width: 600px;
+            text-align: center;
+            padding: 10px;
         }
         footer {
-            background-color: #2c3e50;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #000000;
             color: #fff;
             text-align: center;
             padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            animation: fadeInUp 1s ease-out;
-        }
-        form {
-            margin-top: 20px;
-            position: relative;
-        }
-        label {
-            display: block;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        input[type="text"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            position: relative;
-        }
-        .tooltip {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #3498db;
-            color: #fff;
-            padding: 5px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            margin-top: 5px;
-            white-space: nowrap;
-        }
-        input[type="text"]:focus + .tooltip,
-        textarea:focus + .tooltip {
-            display: block;
-        }
-        input[type="submit"] {
-            background-color: #e74c3c;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            animation: pulse 1.5s infinite alternate;
-        }
-        input[type="submit"]:hover {
-            background-color: #c0392b;
-        }
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes fadeInDown {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.1);
-            }
-        }
-        @keyframes rollIn {
-            0% {
-                transform: translateX(-100%) rotate(-360deg);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0) rotate(0deg);
-                opacity: 1;
-            }
-        }
-        .island {
-            display: none;
-            position: absolute;
-            top: 110%;
-            left: 0;
-            width: 100%;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            padding: 10px;
-            font-size: 0.9rem;
-            color: #333;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1 style="font-size: 2.5rem;">Site Web cu Formular Extins și Căutare</h1>
-    </header>
-    <nav>
-        <img class="logo" src="logo.png" alt="Logo" title="Logo">
-        <a href="#">Acasă</a>
-        <a href="#">Despre</a>
-        <a href="#">Servicii</a>
-        <a href="#">Contact</a>
-    </nav>
-    <section>
-        <h2 style="color: #333;">Bine ai venit pe site-ul nostru!</h2>
-        <p style="color: #555;">Aici poți găsi informații utile și captivante despre diverse subiecte.</p>
-        
-        <!-- Formular extins cu căutare -->
-        <form id="search-form">
-            <label for="cuvinte-cheie">Cuvinte cheie:</label>
-            <input type="text" id="cuvinte-cheie" name="cuvinte-cheie" placeholder="Introdu cuvinte cheie...">
-            <div class="tooltip">Introduceți cuvinte cheie pentru căutare</div>
-            
-            <label for="link">Link:</label>
-            <input type="text" id="link" name="link" placeholder="Introdu link...">
-            <div class="tooltip">Introduceți un link pentru căutare</div>
-            
-            <input type="submit" value="Caută">
-        </form>
-        <div class="island" id="link-preview">
-            <p>Rezumatul linkului va apărea aici...</p>
+    <!-- Secțiunea de sus -->
+    <div class="topnav">
+        <a href="#"><img src="logo.png" class="icon"></a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+    <!-- Spațiu liber pentru separare -->
+    <div class="spacer"></div>
+
+    <!-- Conținutul principal -->
+    <section class="main-content">
+        <div>
+            A lot of settings could be here ;)
         </div>
     </section>
+
+    <!-- Footer -->
     <footer>
-        <p>Drepturile de autor © 2024 Numele tău. Toate drepturile rezervate.</p>
+        <div class="socialIcons">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-google-plus"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footerNav">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Our Team</a></li>
+            </ul>
+        </div>
+        <div class="map-container">
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d85340.33381937296!2d28.860593599999997!3d47.01045280000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c6475e251dd89d%3A0x6a6f1b4dfe40330!2sChi%C8%99in%C4%83u%2C%20Moldova!5e0!3m2!1sen!2sro!4v1635556603750!5m2!1sen!2sro" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <p style="margin-top: 5px;">Copyright &copy; 2024; Designed by <span class="designer">Team 12</span></p>
     </footer>
-
-    <script>
-        document.getElementById('search-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var link = document.getElementById('link').value;
-            var island = document.getElementById('link-preview');
-
-            if (link) {
-                fetch(link)
-                    .then(response => response.text())
-                    .then(data => {
-                        // Afișează conținutul paginii în insulă
-                        island.innerHTML = `<p>Conținut preluat de la: ${link}</p><div>${data}</div>`;
-                        island.style.display = 'block';
-                    })
-                    .catch(error => {
-                        island.innerHTML = `<p>Eroare la preluarea conținutului de la: ${link}</p><p>${error}</p>`;
-                        island.style.display = 'block';
-                    });
-            } else {
-                island.style.display = 'none';
-            }
-        });
-    </script>
 </body>
 </html>
