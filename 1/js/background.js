@@ -73,7 +73,7 @@ chrome.runtime.onMessage.addListener(async (request) => {
   if (request == "OpenPopup") {
 
       chrome.windows.create({
-          url: "/html/settings.html",
+          url: "/html/index.html",
           type: "popup",
           focused: true,
           width: 400,
