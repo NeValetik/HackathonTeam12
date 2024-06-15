@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Web cu Formular Extins și Căutare</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            animation: fadeInDown 1s ease-out;
+        }
+        nav {
+            background-color: #3498db;
+            text-align: center;
+            padding: 10px;
+            animation: fadeInUp 1s ease-out;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 0 10px;
+            display: inline-flex;
+            align-items: center;
+        }
+        nav a img {
+            width: 20px; /* Ajustează dimensiunile imaginii după nevoie */
+            margin-right: 5px; /* Spațiu mic între imagine și text */
+        }
+        section {
+            padding: 20px;
+            animation: fadeIn 1s ease-out;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            animation: fadeInUp 1s ease-out;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            animation: pulse 1.5s infinite alternate;
+        }
+        input[type="submit"]:hover {
+            background-color: #c0392b;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="font-size: 2.5rem;">Site Web cu Formular Extins și Căutare</h1>
+    </header>
+    <nav>
+        <a href="#">
+            <img src="icons/logo.png" alt="Logo" title="Logo">
+            Acasă
+        </a>
+        <a href="#">Despre</a>
+        <a href="#">Servicii</a>
+        <a href="#">Contact</a>
+    </nav>
+    <section>
+        <h2 style="color: #333;">Bine ai venit pe site-ul nostru!</h2>
+        <p style="color: #555;">Aici poți găsi informații utile și captivante despre diverse subiecte.</p>
+        
+        <!-- Formular extins cu căutare -->
+        <form>
+            <label for="cuvinte-cheie">Cuvinte cheie:</label>
+            <input type="text" id="cuvinte-cheie" name="cuvinte-cheie" placeholder="Introdu cuvinte cheie...">
+            
+            <label for="link">Link:</label>
+            <input type="text" id="link" name="link" placeholder="Introdu link...">
+            
+            <input type="submit" value="Caută">
+        </form>
+    </section>
+    <footer>
+        <p>Drepturile de autor © 2024 Numele tău. Toate drepturile rezervate.</p>
+    </footer>
+</body>
+</html>
