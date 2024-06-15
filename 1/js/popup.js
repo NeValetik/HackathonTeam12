@@ -2,14 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchBarInput = document.querySelector(".input-searchbar");
   const buttonSearch = document.querySelector(".search-button");
 
-  console.log(buttonSearch);
-
   if (buttonSearch) {
-    buttonSearch.addEventListener("click", async (e) => {
-      console.log("click");
+    buttonSearch.addEventListener("click", (e) => {
       const search = searchBarInput.value;
-      chrome.runtime.sendMessage("OpenPopup")
-      
+      chrome.runtime.sendMessage({request:"OpenPopup",message:search});
     });
   }
 });
