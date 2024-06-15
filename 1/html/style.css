@@ -93,7 +93,7 @@ footer{
   }
   
   /* Style the links inside the navigation bar */
-  .topnav a {
+.topnav a {
     float: left;
     color: #f2f2f2;
     text-align: center;
@@ -103,24 +103,40 @@ footer{
   }
   
   /* Change the color of links on hover */
-  .topnav a:hover {
+.topnav a:hover {
     background-color: #ddd;
     color: black;
   }
   
   /* Add a color to the active/current link */
-  .topnav a.active {
+.topnav a.active {
     background-color: #04AA6D;
     color: white;
   }
 
-  .icon {
+.icon {
     width: 64px; /* Desired width */
     height: 64px; /* Desired height */
     display: block;
     margin: 0px auto; /* Centering the image */
   } 
 
-  .title{
+.title{
     color: rgb(243, 243, 243);
   }
+
+.text-body {
+    font-family: Arial, sans-serif; /* Set the font family for the body text */
+    font-size: 16px; /* Set the base font size for the body text */
+    line-height: 1.6; /* Set the line height for better readability */
+    color: #333; /* Set the text color */
+    margin: 20px; /* Add some margin around the body */
+}
+
+.text-body h3 {
+    font-family: 'Georgia', serif; /* Set the font family for the h3 tag */
+    font-size: 24px; /* Set the font size for the h3 tag */
+    color: #555; /* Set the color for the h3 tag */
+    margin-top: 20px; /* Add some margin at the top of the h3 tag */
+    margin-bottom: 10px; /* Add some margin at the bottom of the h3 tag */
+}
