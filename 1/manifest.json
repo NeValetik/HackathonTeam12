@@ -39,10 +39,10 @@
         "service_worker": "js/background.js"
     },
     "commands": {
-        "pin-current-tab": {
+        "find-the-comparison": {
           "suggested_key": {
-            "default": "Ctrl+Shift+K",
-            "mac": "Command+Shift+K"
+            "default": "Ctrl+Shift+Up",
+            "mac": "Command+Shift+Up"
           },
           "description": "Find the comparison"
         }
