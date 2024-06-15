@@ -1,18 +1,18 @@
 {
     "manifest_version": 3,
-    "name": "EasyIt Extension",
-    "description": "EasyIt Extension - the best solution for any issue",
+    "name": "TermView Extension",
+    "description": "TermView Extension - the best solution for any issue",
     "version": "1.0",
-    "author": "EasyIT development",
+    "author": "Team 12",
     "action": {
         "default_popup": "html/popup.html",
-        "default_icon": "icons/icon-32.png"
+        "default_icon": "html/logo.png"
     },
     "icons": {
-        "16": "icons/icon-16.png",
-        "32": "icons/icon-32.png",
-        "48": "icons/icon-48.png",
-        "128": "icons/icon-128.png"
+        "16": "html/logo.png",
+        "32": "html/logo.png",
+        "48": "html/logo.png",
+        "128": "html/logo.png"
     },
     "content_scripts": [
         {
