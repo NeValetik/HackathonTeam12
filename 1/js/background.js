@@ -7,7 +7,13 @@ chrome.runtime.onMessage.addListener(async (request) => {
             url: "/html/index.html",
             active: true,
         }, (tab) => {
-            console.log(tab);
+            chrome.tabs.onUpdated.addListener(function listener(tabId, changeInfo) {
+                if (tabId === tab.id && changeInfo.status === 'complete') {
+                  chrome.tabs.onUpdated.removeListener(listener);
+                  // Send message to the new tab
+                  chrome.tabs.sendMessage(tabId, { request: "findIt", message: request.message });
+                }
+              });
         });
     }
 });
@@ -51,3 +57,50 @@ chrome.commands.onCommand.addListener(function(cmd) {
         });
     }
 });
+
+// Create context menu item on extension installation
+chrome.runtime.onInstalled.addListener(function() {
+    chrome.contextMenus.create({
+      title: "Open with Button",
+      contexts: ["selection"],
+      id: "openWithButton"
+    });
+  });
+  
+  // Handle clicks on the context menu item
+  chrome.contextMenus.onClicked.addListener(function(info, tab) {
+    if (info.menuItemId === "openWithButton") {
+      let selectedWord = info.selectionText.trim();
+      if (selectedWord !== "") {
+        chrome.tabs.create({
+          url: "/html/index.html",
+          active: true,
+        }, function(newTab) {
+          // Wait for the new tab to fully load
+          chrome.tabs.onUpdated.addListener(function listener(tabId, changeInfo) {
+            if (tabId === newTab.id && changeInfo.status === 'complete') {
+              chrome.tabs.onUpdated.removeListener(listener);
+              // Send message to the new tab
+              chrome.tabs.sendMessage(tabId, { request: "findIt", message: selectedWord });
+            }
+          });
+        });
+      }
+    }
+  });
+  
+  
+
+
+// async function fetchData() {
+//     try {
+//         const response = await fetch('http://127.0.0.1:5000/api/data');
+//         if (!response.ok) {
+//             throw new Error('Network response was not ok');
+//         }
+//         const data = await response.json();
+//         document.getElementById('data').textContent = JSON.stringify(data);
+//     } catch (error) {
+//         console.error('There has been a problem with your fetch operation:', error);
+//     }
+// }
