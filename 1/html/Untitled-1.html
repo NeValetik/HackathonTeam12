@@ -12,6 +12,7 @@
             padding: 0;
             background-color: #f5f5f5;
             color: #333;
+            overflow: hidden;
         }
         header {
             background-color: #2c3e50;
@@ -25,6 +26,14 @@
             text-align: center;
             padding: 10px;
             animation: fadeInUp 1s ease-out;
+            position: relative;
+        }
+        .logo {
+            vertical-align: middle;
+            width: 40px;
+            height: auto;
+            animation: rollIn 2s ease-out;
+            animation-delay: 0.5s;
         }
         nav a {
             text-decoration: none;
@@ -32,10 +41,7 @@
             padding: 0 10px;
             display: inline-flex;
             align-items: center;
-        }
-        nav a img {
-            width: 20px; /* Ajustează dimensiunile imaginii după nevoie */
-            margin-right: 5px; /* Spațiu mic între imagine și text */
+            font-size: 1.2rem;
         }
         section {
             padding: 20px;
@@ -58,6 +64,7 @@
         }
         form {
             margin-top: 20px;
+            position: relative;
         }
         label {
             display: block;
@@ -72,6 +79,24 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 10px;
+            position: relative;
+        }
+        .tooltip {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #3498db;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            white-space: nowrap;
+        }
+        input[type="text"]:focus + .tooltip,
+        textarea:focus + .tooltip {
+            display: block;
         }
         input[type="submit"] {
             background-color: #e74c3c;
@@ -124,6 +149,30 @@
                 transform: scale(1.1);
             }
         }
+        @keyframes rollIn {
+            0% {
+                transform: translateX(-100%) rotate(-360deg);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+        }
+        .island {
+            display: none;
+            position: absolute;
+            top: 110%;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 0.9rem;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -131,10 +180,8 @@
         <h1 style="font-size: 2.5rem;">Site Web cu Formular Extins și Căutare</h1>
     </header>
     <nav>
-        <a href="#">
-            <img src="icons/logo.png" alt="Logo" title="Logo">
-            Acasă
-        </a>
+        <img class="logo" src="logo.png" alt="Logo" title="Logo">
+        <a href="#">Acasă</a>
         <a href="#">Despre</a>
         <a href="#">Servicii</a>
         <a href="#">Contact</a>
@@ -144,18 +191,47 @@
         <p style="color: #555;">Aici poți găsi informații utile și captivante despre diverse subiecte.</p>
         
         <!-- Formular extins cu căutare -->
-        <form>
+        <form id="search-form">
             <label for="cuvinte-cheie">Cuvinte cheie:</label>
             <input type="text" id="cuvinte-cheie" name="cuvinte-cheie" placeholder="Introdu cuvinte cheie...">
+            <div class="tooltip">Introduceți cuvinte cheie pentru căutare</div>
             
             <label for="link">Link:</label>
             <input type="text" id="link" name="link" placeholder="Introdu link...">
+            <div class="tooltip">Introduceți un link pentru căutare</div>
             
             <input type="submit" value="Caută">
         </form>
+        <div class="island" id="link-preview">
+            <p>Rezumatul linkului va apărea aici...</p>
+        </div>
     </section>
     <footer>
         <p>Drepturile de autor © 2024 Numele tău. Toate drepturile rezervate.</p>
     </footer>
+
+    <script>
+        document.getElementById('search-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var link = document.getElementById('link').value;
+            var island = document.getElementById('link-preview');
+
+            if (link) {
+                fetch(link)
+                    .then(response => response.text())
+                    .then(data => {
+                        // Afișează conținutul paginii în insulă
+                        island.innerHTML = `<p>Conținut preluat de la: ${link}</p><div>${data}</div>`;
+                        island.style.display = 'block';
+                    })
+                    .catch(error => {
+                        island.innerHTML = `<p>Eroare la preluarea conținutului de la: ${link}</p><p>${error}</p>`;
+                        island.style.display = 'block';
+                    });
+            } else {
+                island.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
