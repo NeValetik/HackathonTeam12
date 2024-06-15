@@ -18,21 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     });
 
-chrome.runtime.onMessage.addListener(async (request) => {
-	console.log("Received search query:", request);
-  	if (request == "OpenPopup") {
-      	chrome.windows.create({
-          	url: "/html/index.html",
-			type: "popup",
-			focused: true,
-			width: 400,
-			height: 600,
-			top: 0,
-      	}, () => {
-          console.log(request)
-		})
-  	}
-})
 
 
 
