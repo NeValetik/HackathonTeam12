@@ -32,7 +32,7 @@ footer{
 }
 .footerContainer{
     width: 100%;
-    padding: 70px 30px 20px ;
+    padding: 10px 30px 10px ;
 }
 .socialIcons{
     display: flex;
@@ -148,3 +148,10 @@ footer{
   .title{
     color: rgb(243, 243, 243);
   }
+
+  .map-container {
+    padding: 10px;
+    width: 400px; /* Adjust width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    text-align: center; /* Optional: Center content inside the container */
+}
