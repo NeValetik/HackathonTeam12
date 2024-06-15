@@ -6,6 +6,7 @@
 
 html{
     scroll-behavior: smooth;
+    overflow-y: scroll;
 }
 
 html, body {
@@ -23,9 +24,9 @@ body {
     flex-direction: column;
 }
 
+
 footer{
     background-color: #111;
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -111,7 +112,6 @@ footer{
 
 .topnav {
     background-color: #000000;
-    overflow: hidden;
     display: flex;
     align-items: center;
   }
@@ -155,3 +155,5 @@ footer{
     margin: 0 auto; /* Center the container horizontally */
     text-align: center; /* Optional: Center content inside the container */
 }
+
+
