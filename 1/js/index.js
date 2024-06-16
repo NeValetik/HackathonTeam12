@@ -20,7 +20,7 @@ chrome.runtime.onMessage.addListener(async (request) => {
         
         // Create the payload
         const payload = {
-            message: request.message
+            name: request.message
         };
         
         try {
@@ -35,12 +35,42 @@ chrome.runtime.onMessage.addListener(async (request) => {
             
             // Parse the response as JSON
             const responseData = await response.json();
+            console.log(responseData);
             
             // Use the response data to update the text body
             const text_body = document.querySelector(".text-body");
-            text_body.innerHTML = `
-                <h3>${responseData.responseMessage}</h3>
-            `;
+
+            text_body.innerHTML = `<div>
+                <h3> The tech: ${responseData.current_product.name}</h3>
+                <h3> Price: ${responseData.current_product.details.price}</h3>
+                <ul>
+                <li> battery: ${responseData.current_product.details.scores.battery}</li>
+                <li> camera: ${responseData.current_product.details.scores.camera}</li>
+                <li> overall: ${responseData.current_product.details.scores.overall}</li>
+                <li> performance: ${responseData.current_product.details.scores.performance}</li>
+                <li> quality: ${responseData.current_product.details.scores.quality}</li>
+                <li> screen: ${responseData.current_product.details.scores.screen}</li>
+                <li> value: ${responseData.current_product.details.scores.value}</li>
+                </ul>
+            </div>`;
+
+            let max_index = responseData.similar_products.length;
+            for(let i = 0; i < max_index; i++){
+                text_body.innerHTML += `<div class = "row">
+            <h3> The tech: ${responseData.similar_products[String(i)].name}</h3>
+                <h3> Price: ${responseData.similar_products[String(i)].price}</h3>
+                <ul>
+                <li> battery: ${responseData.similar_products[String(i)].scores.battery}</li>
+                <li> camera: ${responseData.similar_products[String(i)].scores.camera}</li>
+                <li> overall: ${responseData.similar_products[String(i)].scores.overall}</li>
+                <li> performance: ${responseData.similar_products[String(i)].scores.performance}</li>
+                <li> quality: ${responseData.similar_products[String(i)].scores.quality}</li>
+                <li> screen: ${responseData.similar_products[String(i)].scores.screen}</li>
+                <li> value: ${responseData.similar_products[String(i)].scores.value}</li>
+                </ul>
+            <a href="${responseData.similar_products[String(i)].url}" target="_blank">Url ${String(i+1)}</a>
+            </div>`;
+            }
         } catch (error) {
             console.error("Error sending request to the server:", error);
         }
