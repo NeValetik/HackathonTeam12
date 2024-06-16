@@ -1,0 +1,30 @@
+[
+    {
+        "Apple iPhone 15 512GB Yellow": {
+            "url": "https://www.amazon.com/Apple-iPhone-15-512GB-Yellow/dp/B0CMPM9K7S/ref=sr_1_1?crid=UK0O1SPX4HVK&dib=eyJ2IjoiMSJ9.sSJmHW8At6YSThGGbzftOQnk1jePJwuuZ2jE54Ga3V83XGAVFolCROJQJlqaArNUDRguHt3s1a8BSRT9cbTMkMn-HH8lwro8lwsQNI-aIZHsUm-nzPZ3AGvi_CjB3ASNV1oaRgtLvp9hvq1uk402Vzc5rVhxOa6BY4xtunzBf4hO6dKZNPq_2qBPpYEtFxV-j6IWQiwk-JlnRRNuqjpTKO314h86IuUC4_pagFZPat0.ElBSQPsTRitgB7_7mF76Ofj6weW3wjffMNArVnhZN3Y&dib_tag=se&keywords=iphone+15&qid=1718519967&sprefix=iphone+15%2Caps%2C377&sr=8-1",
+            "price": "$748.00",
+            "scores": {
+                "camera": "good",
+                "battery": "good",
+                "screen": "good",
+                "performance": "good",
+                "quality": "good",
+                "value": "good",
+                "overall": "good"
+            }
+        },
+        "Apple iPhone 256GB Purple Renewed": {
+            "url": "https://www.amazon.com/Apple-iPhone-256GB-Purple-Renewed/dp/B0BN97CP1W/ref=sr_1_1?crid=3EJBBDR2MVV9P&dib=eyJ2IjoiMSJ9._XqCccG60BQvlHXs4BTgMBQx4wmk6_9dzHUJqYuAQgYL5d8A3vXKPJsWwe-tByyg7k5wWKuEgwD3B8UHXyFjfIDDJWs8K3kkqw31PxzgSu0zw6eStqu5oep3BCFCQDbKTV4nHZOoNy2-iKehrQCGVyB8SvQizu9FlS3y1jltY9XurHHU5gbI3OTA4sxwKRBn7Gg6cwNIu3wWft8oJALtSPuDq92fjIqJZuqGMFlbpTU.ELQvfPlhIO5rsxlAqidH2osXl9clST90sVQjmLipHoM&dib_tag=se&keywords=iphone+14&qid=1718519842&sprefix=iphone+14%2Caps%2C408&sr=8-1",
+            "price": "$509.13",
+            "scores": {
+                "camera": "good",
+                "battery": "good",
+                "screen": "above average",
+                "performance": "good",
+                "quality": "good",
+                "value": "good",
+                "overall": "good"
+            }
+        }
+    }
+]
