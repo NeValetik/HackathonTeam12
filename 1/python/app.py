@@ -140,7 +140,8 @@ with open('products_with_scores.json', 'r', encoding='utf-8') as f:
 
 
 def process_json(request):
-    with open('products_with_scores_temp.json', 'r') as products_with_scores_temp:
+    print(request)
+    with open('products_with_scores_temp.json', 'r',encoding='utf-8') as products_with_scores_temp:
         pass
         data = eval(request.read())
         if not data:

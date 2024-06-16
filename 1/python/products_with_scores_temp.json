@@ -1,7 +1,7 @@
 [
     {
         "Apple iPhone 15 512GB Yellow": {
-            "url": "https://www.amazon.com/Apple-iPhone-15-512GB-Yellow/dp/B0CMPM9K7S/ref=sr_1_1?crid=UK0O1SPX4HVK&dib=eyJ2IjoiMSJ9.sSJmHW8At6YSThGGbzftOQnk1jePJwuuZ2jE54Ga3V83XGAVFolCROJQJlqaArNUDRguHt3s1a8BSRT9cbTMkMn-HH8lwro8lwsQNI-aIZHsUm-nzPZ3AGvi_CjB3ASNV1oaRgtLvp9hvq1uk402Vzc5rVhxOa6BY4xtunzBf4hO6dKZNPq_2qBPpYEtFxV-j6IWQiwk-JlnRRNuqjpTKO314h86IuUC4_pagFZPat0.ElBSQPsTRitgB7_7mF76Ofj6weW3wjffMNArVnhZN3Y&dib_tag=se&keywords=iphone+15&qid=1718519967&sprefix=iphone+15%2Caps%2C377&sr=8-1",
+            "url": "https://www.amazon.com/Apple-iPhone-15-512GB-Yellow/dp/B0CMPM9K7S/ref=sr_1_1?crid=2T1YPL4K6ITNA&dib=eyJ2IjoiMSJ9.sSJmHW8At6YSThGGbzftOQnk1jePJwuuZ2jE54Ga3V-_9bxy-GLtRWNnGlQZb6Za-2F5bXzzyHYVfuhhNEyyQoNK-22KBfJsInANr5WN6d54iPQeRV2oMHfsZzSxrKXnvvbczRJOKGF3GfmJ7Mo6OSNr7ZQnrX8NSa4y0r-j5KBg5DLb65dvUZ47lez8Bj_1Pqjovk0c68rToYo7CxmCQXvn-_K9M9Le01UgHhP0P1o.WTDWLx1gzHrK9EG87qNmJOgXRAFzU1cxkLS-W4EOH3M&dib_tag=se&keywords=Iphone+15&qid=1718521613&sprefix=iphone+15%2Caps%2C398&sr=8-1",
             "price": "$748.00",
             "scores": {
                 "camera": "good",
@@ -37,6 +37,71 @@
                 "quality": "above average",
                 "value": "above average",
                 "overall": "average"
+            }
+        },
+        "OnePlus Dual SIM Smartphone Processor Hasselblad": {
+            "url": "https://www.amazon.com/OnePlus-Dual-SIM-Smartphone-Processor-Hasselblad/dp/B0CQ5MYYZL/ref=sr_1_1?crid=38RPOHH4PIR2G&dib=eyJ2IjoiMSJ9.tlg6tWmWH6Lo5YH46vbN5b9_L5WylVgFkv1ptcFK5NDF1MbzvSOgOgt5uQglu65GFRwI7WDPxvG1AgmEYCLv39zOI6PRGR7OwgGtyIWhtfnSooNL6MbD3AukC6Qbi_MqjAeTQSznPhb4_MsYCCxxO0jNvkav3ylhH4XMZ-2xvsBZ-bIzxWrtRQ_z9Sj1l143hf9Xt-TyWx4JlYAgev8a22FgHdkVhoHCY6nqbASd2X8.a96WOOOpLxPfb65YeW-X4EHhiPpUbg-koaDqFjR2QzM&dib_tag=se&keywords=OnePlus+12&qid=1718523300&sprefix=oneplus+12%2Caps%2C466&sr=8-1",
+            "price": "$671.99",
+            "scores": {
+                "camera": "good",
+                "battery": "good",
+                "screen": "good",
+                "performance": "good",
+                "quality": "good",
+                "value": "good",
+                "overall": "good"
+            }
+        },
+        "VIVO Adjustable Articulating Counterbalance STAND V001O": {
+            "url": "https://www.amazon.com/VIVO-Adjustable-Articulating-Counterbalance-STAND-V001O/dp/B01NH0HTM5/ref=sr_1_1?crid=1ZHTIQP2DKA5N&dib=eyJ2IjoiMSJ9.eldghDMfMn3LzRh38swu35v4daDsBcs7Ez1bQI5llTQDsVnrDgJ2a0hV2DzJ7bl_8xBrYuNqVz7Ot9Ly_rJyj2z56q-ad9qIRLSFgCTYBK0JZnmArGgII0QtsG3rLs-KBwGaCHdHbbk_LR601AvvXBJ22fPGocdrSAMaLQiaALosLuR9wgs5S-6Tq6Ae4CFZZSfa2B2xfZcFJsaipMcH-qjAcEcdVWH79CCEXVYEFQOaZ4pu4Idsa9CRXGs6ehPoFyi7-gk2SHtaI44eE-DCDu8AnLd0ma5HoZ1em1v01IA.u5-ndoFuaHrE6wuUYTVtUj9RrrMSK5qXYJWTTpDBDFE&dib_tag=se&keywords=vivo&qid=1718523432&sprefix=vivo%2Caps%2C461&sr=8-1",
+            "price": "$32.71",
+            "scores": {
+                "camera": "above average",
+                "battery": "good",
+                "screen": "above average",
+                "performance": "good",
+                "quality": "good",
+                "value": "good",
+                "overall": "good"
+            }
+        },
+        "Xiaomi Tmobile Unlocked Charger Midnight": {
+            "url": "https://www.amazon.com/Xiaomi-Tmobile-Unlocked-Charger-Midnight/dp/B0CSDY3XV4/ref=sr_1_1?crid=23N86T0FF0D7U&dib=eyJ2IjoiMSJ9.31YPL4FSwyNrgrIkYmkJUetXcK1kCwRgrYln2jv0h4JJbObv8r7WBMpzJRfwXrDV3AmMz-dGOg9BU5dLneLoEi3kJXA3MBIh_s5afgArW8vxKQrDKQLRLk_3g7-AmAcWXdMqjBobnrOlrBlFlhwp-87bkJS0KGl6IEMHOeTjYaZdrf1JbtoK7dWAqnG4lfh1lUvkNK9QXwdjVHfXLWlAJ7XZKvbDQjAtVlJs1Ed0fMc.iX-2Gys824mD90ovNX4zgRRiObVpKSqaseRntCJ-x3w&dib_tag=se&keywords=Redmi&qid=1718523518&sprefix=redmi%2Caps%2C360&sr=8-1",
+            "price": "$164.99",
+            "scores": {
+                "camera": "above average",
+                "battery": "above average",
+                "screen": "above average",
+                "performance": "above average",
+                "quality": "above average",
+                "value": "above average",
+                "overall": "above average"
+            }
+        },
+        "OnePlus Unlocked Dual SIM Charging Chromatic": {
+            "url": "https://www.amazon.com/OnePlus-Unlocked-Dual-SIM-Charging-Chromatic/dp/B0C22BRGLG/ref=sr_1_1?crid=52EMJJ0YAC1G&dib=eyJ2IjoiMSJ9.7QOWMoJCv7KZDzZwJVfMH1tChu_HZ1F1PYys7e8vQOTr9pwqo61pAfP7z-HOFNeM2hyURdnFfNgoZHu7Sez4t_GhCt_7hwvyV1rlkDmMWqgQ17EGProIAOpdMhOI3ssDUis_DLFKzkQNjCupk8tj4EO2VjqTcBgROqFfzLOaaHrEvPqY_RVpfHR04kLVYVRcw09EXuLH7pSjjqXKodsk8LM-qt2j_8Fi9r0WExZd9-c.YZJgQl5s3FFtvOB9D1AHXe5KSutxwpRUJ3a8v9xO1iE&dib_tag=se&keywords=honor+magic+5+lite&qid=1718526230&sprefix=honor+magic+5+lite%2Caps%2C526&sr=8-1",
+            "price": "$211.19",
+            "scores": {
+                "camera": "good",
+                "battery": "good",
+                "screen": "good",
+                "performance": "good",
+                "quality": "good",
+                "value": "good",
+                "overall": "good"
+            }
+        },
+        "VIVO Standing Bolt through Adjustable STAND V002F": {
+            "url": "https://www.amazon.com/VIVO-Standing-Bolt-through-Adjustable-STAND-V002F/dp/B00C5H5DN0/ref=sr_1_1?crid=1J58XA0BT6U75&dib=eyJ2IjoiMSJ9.QpAgRk11zorGW8QvPdoXGlQAU0VBUBJNWxOWMXq41pfrQL_vLAk99Jar4bL2zPuNGXex8DDnGVgZInRaFbyiIARmeutgli_lgIOs6dO8D2fQnQLF8BLyZB3lddy6kZHe2poqzIhVlfguY2EUnugNI8e8kM3nGWLKbErhgMb1oegvgJ86wegXon7btrPRUmKsp46G1EOmvX6DuJQyZRaCY03ddYYDw4U8LFksq-HIf2PotAYMnP-ThOa47-Nez3y-YZ-ji1aH8ARvdvP_GTYbLp5pBSJFwNRnHtSB74Raoi8.kl8_zzFCEBPbkIxeefjJZG6BhI8CE_3VhK0huMiz0dA&dib_tag=se&keywords=vivo&qid=1718527671&sprefix=vivo%2Caps%2C294&sr=8-1",
+            "price": "$39.99",
+            "scores": {
+                "camera": "good",
+                "battery": "good",
+                "screen": "good",
+                "performance": "good",
+                "quality": "good",
+                "value": "good",
+                "overall": "good"
             }
         }
     }
