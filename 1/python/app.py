@@ -1,7 +1,50 @@
 from flask import Flask, request, jsonify
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
+import time
+import pyautogui
 import json
 
 app = Flask(__name__)
+
+
+def search_product(driver,query):
+    # Find the search input field
+    search_input = driver.find_element(By.ID, 'twotabsearchtextbox')
+
+    # Clear any existing text in the search input field
+    search_input.clear()
+
+    # Enter the search query
+    time.sleep(3)
+    search_input.send_keys(query)
+
+    # Submit the search (you can also simulate pressing Enter)
+    time.sleep(3)
+    search_input.submit()
+
+def extract_links(driver):
+    # Wait for the elements to be present
+    WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located(
+        (By.CSS_SELECTOR, 'a.a-link-normal.s-underline-text.s-underline-link-text.s-link-style.a-text-normal')))
+    # Extract all anchor tags with the specific class
+    links = driver.find_elements(By.CSS_SELECTOR,
+                                 'a.a-link-normal.s-underline-text.s-underline-link-text.s-link-style.a-text-normal')
+
+    total_links = []
+    # Print the href attribute of each anchor tag
+    for link in links:
+        href = link.get_attribute('href')
+        if href:
+            # print(href)
+            total_links.append(href)
+            if len(total_links):
+                flag = True
+                return (total_links,flag)
 
 # Load JSON data
 with open('products_with_scores.json', 'r', encoding='utf-8') as f:
@@ -33,6 +76,40 @@ def get_product():
             break
 
     if not current_product_name:
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")  # Comment out to run in regular mode
+        chrome_options.add_argument("--window-size=1920x1080")  # Set window size
+        # Set up the WebDriver (use the path to your WebDriver)
+        driver_path = 'D:\\chrome_extension\\1\\chromedriver-win64\\chromedriver.exe'
+        service = Service(driver_path)
+        driver = webdriver.Chrome(service=service, options=chrome_options)
+
+        # Define the URL you want to scrape
+        url = 'https://www.amazon.com/s?k=iphone&ref=nb_sb_noss'
+
+        # Open the URL
+        driver.get(url)
+
+        total_links = []
+        flag = False
+
+        search_product(driver,'iphone')
+        total_links=[]
+        while True:
+            total_links.append(extract_links(driver)[0])
+            if flag[1]:
+                break
+            time.sleep(3)
+
+            try:
+                next_button = driver.find_element(By.CSS_SELECTOR, 'a.s-pagination-item.s-pagination-next.s-pagination-button.s-pagination-separator')
+                next_button.click()
+                time.sleep(3)
+            except:
+                print("Last page reached.")
+                break
+        
+        driver.quit()
         return jsonify({"error": "Product not found"}), 404
 
     # Determine the price range for similar products (e.g., +/- 10% of current price)
@@ -79,3 +156,14 @@ def get_product():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
+
+
+
+
+
+
+# Perform the search for 'iphone'
+
+# Function to extract and print links
+
+
