@@ -11,17 +11,25 @@ html{
 
 html, body {
     height: 100%;
-    background-image: url('backgrd.jpg');
 }
+
+#pagecontainer{
+    position: relative;
+    min-height: 200vh;
+}
+
+/* #contentwrap{
+    padding-bottom: 2.5rem;
+} */
+
 
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 .content {
-    flex: 1;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
@@ -33,6 +41,7 @@ footer{
     left: 0;
     bottom: 0;
     width: 100%;
+
 }
 .footerContainer{
     width: 100%;
@@ -157,7 +166,7 @@ footer{
 .text-body {
     font-family: Arial, sans-serif; /* Set the font family for the body text */
     font-size: 16px; /* Set the base font size for the body text */
-    line-height: 1.6; /* Set the line height for better readability */
+    /* line-height: 1.6; Set the line height for better readability */
     color: #333; /* Set the text color */
     margin: 20px; /* Add some margin around the body */
 }
