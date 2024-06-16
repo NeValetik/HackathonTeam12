@@ -25,6 +25,19 @@
                 "value": "good",
                 "overall": "good"
             }
+        },
+        "Apple iPhone 32GB Unlocked Black": {
+            "url": "https://www.amazon.com/Apple-iPhone-32GB-Unlocked-Black/dp/B0CNM32TLW/ref=sr_1_1?crid=312XXD48Q5ZE8&dib=eyJ2IjoiMSJ9.ZZqsvhlio4POQXfce7bLVHAY52f29nmdOAakWzCw1N6KJZTkbL9dEww7yCCzD3LI5IAwtHr3JPHGmXz8VDfTR1pRncU8HMR9ExbTJwsjTceywv2GYGtNUhpgHJWZZyI48OS_Kvuu0oIorOQF6jscKsMPZrTjx2dNJTstZgVoA4pZCWxz52pPIk_7cfjDp4-P6c2pMHhPpppcG_oFknCqXkLWsWGxAV4TxcjjybEo1oE.bv20c6A1rVZxATcruUFeO6Pr33TJjQ4kr6-Lsw9IOIY&dib_tag=se&keywords=iphone&qid=1718521269&sprefix=iphone%2Caps%2C368&sr=8-1",
+            "price": "$79.85",
+            "scores": {
+                "camera": "average",
+                "battery": "average",
+                "screen": "average",
+                "performance": "above average",
+                "quality": "above average",
+                "value": "above average",
+                "overall": "average"
+            }
         }
     }
 ]

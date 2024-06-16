@@ -37,7 +37,6 @@ def scrape(url):
     }
 
     # Download the page using requests
-    print("Downloading %s" % url)
     r = requests.get(url, headers=headers)
     
     # Simple check to check if page was blocked (Usually 503)
@@ -86,7 +85,6 @@ def extract_links(driver):
     for link in links:
         href = link.get_attribute('href')
         if href:
-            print("This is href",href)
             total_links.append(href)
             if len(total_links):
                 flag = True
@@ -103,7 +101,6 @@ def load_models():
     global absa_tokenizer, absa_model, sentiment_model, models_loaded
     if not models_loaded: 
         # Load Aspect-Based Sentiment Analysis model
-        print("Hello Mir")
         absa_tokenizer = AutoTokenizer.from_pretrained("yangheng/deberta-v3-base-absa-v1.1")
         absa_model = AutoModelForSequenceClassification.from_pretrained("yangheng/deberta-v3-base-absa-v1.1")
 
@@ -146,7 +143,6 @@ def process_json(request):
     with open('products_with_scores_temp.json', 'r') as products_with_scores_temp:
         pass
         data = eval(request.read())
-        print(data)
         if not data:
             return jsonify({"error": "Invalid input, expecting JSON payload"}), 400
 
@@ -209,7 +205,6 @@ def get_products():
 @app.route('/findIt', methods=['POST'])
 def get_product():
     data = request.get_json()
-    print(data)
     if not data:
         return jsonify({"error": "Invalid input, expecting JSON payload"}), 400
 
@@ -298,7 +293,7 @@ def get_product():
                 with open('products_with_scores_temp.json', 'r') as products_with_scores_temp:
                     data = json.load(products_with_scores_temp)  # Load the JSON data once
                     for product_name, details in data[0].items():
-                        print(product_name,details)
+                        print(product_name)
                         if all(keyword.lower() in product_name.lower() for keyword in keywords.split()):
                             print("Hello")
 
@@ -306,8 +301,6 @@ def get_product():
                             current_product_details = details
                             break
 
-    print(current_product_details)
-    print(current_product_name)
     # Determine the price range for similar products (e.g., +/- 10% of current price)
     current_product_price = float(str(current_product_details['price']).replace('$', ''))
     price_tolerance_percentage = 10  # Adjust this as needed
