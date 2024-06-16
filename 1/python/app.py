@@ -296,11 +296,13 @@ def get_product():
                     for product_name, details in data[0].items():
                         print(product_name)
                         if all(keyword.lower() in product_name.lower() for keyword in keywords.split()):
-                            print("Hello")
-
                             current_product_name = product_name
                             current_product_details = details
-                            break
+                            print("Hello")
+                        break
+
+                            # current_product_name = product_name
+                            # current_product_details = details
 
     # Determine the price range for similar products (e.g., +/- 10% of current price)
     current_product_price = float(str(current_product_details['price']).replace('$', ''))
