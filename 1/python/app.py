@@ -14,6 +14,7 @@ def get_products():
 @app.route('/findIt', methods=['POST'])
 def get_product():
     data = request.get_json()
+    print(data)
     if not data:
         return jsonify({"error": "Invalid input, expecting JSON payload"}), 400
 
