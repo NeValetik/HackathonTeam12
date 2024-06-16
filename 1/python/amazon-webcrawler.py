@@ -3,18 +3,39 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 import time
+import pyautogui
+
+
+
+chrome_options = Options()
+chrome_options.add_argument("--headless")  # Comment out to run in regular mode
+chrome_options.add_argument("--window-size=1920x1080")  # Set window size
+
+def switch_virtual_desktop(desktop_number):
+    # Hotkey to switch virtual desktop
+    if desktop_number == 1:
+        pyautogui.hotkey('win', 'ctrl', 'left')
+    elif desktop_number == 2:
+        pyautogui.hotkey('win', 'ctrl', 'right')
+# switch_virtual_desktop(2)
+
+
 
 # Set up the WebDriver (use the path to your WebDriver)
-driver_path = 'D:\\Folder nou\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe'
+driver_path = 'D:\\chrome_extension\\1\\chromedriver-win64\\chromedriver.exe'
 service = Service(driver_path)
-driver = webdriver.Chrome(service=service)
+driver = webdriver.Chrome(service=service, options=chrome_options)
 
 # Define the URL you want to scrape
 url = 'https://www.amazon.com/s?k=iphone&ref=nb_sb_noss'
 
 # Open the URL
 driver.get(url)
+
+total_links = []
+flag = 0
 
 
 def search_product(query):
@@ -49,13 +70,20 @@ def extract_links():
     for link in links:
         href = link.get_attribute('href')
         if href:
-            print(href)
+            # print(href)
+            total_links.append(href)
+            if len(total_links):
+                flag = True
+                return
 
 
 # Loop to go through all pages
 while True:
     # Extract and print links from the current page
     extract_links()
+    if flag:
+        break
+
 
     # Add delay to mimic human behavior and to wait for the page to load
     time.sleep(3)
@@ -72,5 +100,7 @@ while True:
         print("Last page reached.")
         break
 
+# switch_virtual_desktop(1)
+print(total_links)
 # Close the browser
 driver.quit()
